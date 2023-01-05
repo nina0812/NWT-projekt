@@ -1,0 +1,471 @@
+/*bottlegreen = #1C6144 */
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Josefin Sans", sans-serif;
+  background-color: #fff;
+}
+
+h1 {
+  font-size: 50px;
+  margin: 0;
+}
+#root {
+  padding: 0;
+  margin: 0;
+  position: relative;
+}
+a:link, :visited {
+  color: black;
+  text-decoration: none;
+}
+/* page setup */
+
+.maxw{
+max-width: 1300px;
+margin-left: auto;
+margin-right: auto;
+}
+
+.container{
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+section {
+  padding-top: 60px;
+}
+
+
+/* grid*/
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: 44px;
+}
+
+/*header*/
+header {
+  position: sticky;
+  width: 100%;
+  height: 60px;
+  z-index: 2;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 30px;
+  padding-right: 30px;
+  background: #fff;
+}
+
+header > .navbar {
+  display: flex;
+  column-gap: 30px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.logo {
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.hamburger {
+  width: 30px;
+  height: 15px;
+  box-sizing: border-box;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  display: none;
+}
+
+
+.hamburger .item {
+  width: 100%;
+  height: 3px;
+  background: #111;
+}
+
+
+
+/*wallpaper*/
+.wallpaper {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.wallpaper .img-holder {
+  width: 100%;
+  padding-top: 133%;
+}
+
+picture {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+}
+
+.img-holder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.wallpaper__content {
+  position: absolute;
+  top: 0;
+  left:0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wallpaper__content > div {
+  z-index: 2;
+  color: #fff;
+}
+
+.skincare-product {
+  position: relative;
+  max-height: 400px;
+  margin-top: 50px;
+}
+
+.skincare-product .img-holder {
+  padding-top: 100%;
+  width: 100%;
+}
+
+.skincare-product img {
+  object-fit: contain;
+}
+
+.title-holder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* product brands */
+
+.product-brands {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.brands--title {
+  font-size: 30px;
+  text-decoration: underline;
+}
+.listed--brands {
+  display: flex;
+  align-items: center;
+  column-gap: 30px;
+  font-size: 18px;
+}
+.brand {
+  cursor: pointer;
+  font-size: 24px;
+}
+.brand:hover {
+  text-decoration: underline;
+}
+
+.active {
+  text-decoration: underline;
+}
+
+
+
+/* FORM */
+.wrapper {
+  top: 0;
+  left:0;
+  position: relative;
+  width: 100%;
+  min-height: calc( 100vh - 200px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.form{
+  margin-top: 100px;
+  padding: 40px;
+  width: 450px;
+  box-shadow: 0px 8px 40px 10px rgba(24, 41, 70, 0.04);
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+  position: relative;
+}
+
+
+input, textarea{
+  height: 55px;
+  background: #fff;
+  border: 1px solid #EBEBEB;
+  box-sizing: border-box;
+  border-radius: 7px;
+  padding: 0 20px;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 18px;
+  color: #5F5F5F;
+  opacity: 0.6;
+  outline: none;
+  margin-bottom: 20px;
+}
+
+textarea{
+  padding-top: 20px;
+  resize: vertical;
+}
+
+
+button{
+  height: 55px;
+  border: none;
+  background: #000;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 25px;
+  text-align: center;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  cursor: pointer;
+  transition: all .35s ease;
+  margin-top: 10px;
+}
+
+button:hover{
+  transform: scale(0.8);
+}
+.signin {
+  display: block;
+  margin-top: 15px;
+  font-size: 0.95em;
+  text-align: center;
+  cursor: pointer;
+}
+/* product */
+.product {
+  margin-top: 30px;
+  grid-column: span 3;
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  min-height: 350px;
+  justify-content: space-between;
+  width: 350px;
+  box-sizing: border-box;
+  padding: 10px;
+}
+
+.product > div {
+  width: 100%;
+  overflow-wrap: break-word;
+  text-align: center;
+}
+
+.product > .brand {
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.product > .name {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.product > .product-image {
+  height: 350px;
+  position: relative;
+}
+
+.myproducts > .product > .price {
+  color: #000;
+  background: unset;
+  padding: 0;
+}
+
+.product > .price {
+  background: #000000;
+  padding: 8px;
+  width: 100%;
+  box-sizing: border-box;
+  color: white;
+  cursor: pointer;
+}
+
+.product > .price:hover {
+  transform: scale(0.8);
+}
+
+.product-image img {
+  width: 100%;
+  height: 100%;
+}
+
+.product-list {
+  flex-basis: 80%;
+  padding-top: 80px;
+  padding-bottom: 40px;
+  padding-left: 20px;
+  padding-right: 20px;
+  max-height: 100vh;
+  overflow-y: scroll;
+}
+
+.add-product {
+  padding-top: 30px;
+  padding-left: 30px;
+  padding-right: 30px;
+  display: flex;
+  justify-content: end;
+  font-size: 20px;
+}
+
+.add {
+  cursor: pointer;
+}
+
+.add:hover {
+  text-decoration: underline;
+}
+
+.products {
+  display: flex;
+  flex-direction: row;
+  column-gap: 40px;
+  row-gap: 40px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.myproducts {
+  padding: 35px;
+  min-height: calc(100vh - 380px);
+}
+
+.wrapper-product {
+  position: absolute;
+  top: 0;
+  box-sizing: border-box;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  backdrop-filter: blur(5px);
+}
+
+.wrapper-product > .form {
+  z-index: 3;
+  margin-top: 0;
+  background: #fff;
+}
+
+.x {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.x:hover {
+  transform: scale(1.5);
+}
+/* footer */
+
+footer {
+  margin-top: 100px;
+  box-sizing: border-box;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media only screen and (max-width: 800px) {
+  .products {
+    column-gap: 30px;
+    row-gap: 30px;
+  }
+  .product-list {
+    flex-basis: unset;
+    max-height: unset;
+  }
+  .product {
+    width: 350px;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .products {
+    row-gap: 20px;
+  }
+  .product {
+   width: 300px;
+  }
+  .hamburger {
+      display: flex;
+  }
+  .navbar {
+      position: absolute;
+      top: 60px;
+      left: 0;
+      width: 100%;
+      flex-direction: column;
+      row-gap: 10px;
+      box-sizing: border-box;
+      padding-left: 20px;
+      max-height: 0px;
+      overflow: hidden;
+  }
+  .navbar[opened] {
+      max-height: unset;
+      background: #fff; 
+      padding-bottom: 20px;
+      padding-top: 20px;
+  }
+  .grid {
+      column-gap: 20px;
+  }
+  .skincare-product {
+      display: none;
+  }
+  .title-holder {
+      grid-column: span 12 !important;
+  }
+  .container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .myproducts {
+    flex-direction: column;
+    min-height: unset;
+  }
+  .product-list {
+    flex-basis: unset;
+    max-height: unset;
+  }
+  .product {
+    grid-column: span 6;
+  }
+}
